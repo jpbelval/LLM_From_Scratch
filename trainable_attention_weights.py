@@ -21,4 +21,6 @@ class SelfAttention_v2(nn.Module):
         row_sums = masked_simple.sum(dim=-1, keepdim=True)
         masked_simple_norm = masked_simple / row_sums
         context_vec = attn_weights @ values
-        return masked_simple_norm
+        torch.manual_seed(123)
+        dropout = nn.Dropout(0.5)
+        return dropout(masked_simple_norm)
