@@ -34,4 +34,4 @@ input_embeddings = token_embeddings + pos_embeddings
 # Attention vectors
 torch.manual_seed(123)
 sa_v1 = SelfAttention_v2(d_in=256, d_out=256)
-print(sa_v1(input_embeddings[0]))
+print(sa_v1(input_embeddings))
